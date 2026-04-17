@@ -13,8 +13,6 @@ public class Advertisement {
 		
 		System.out.println("皆さんの応募をお待ちしております！");
 		
-		
-		
 
 	}
 
