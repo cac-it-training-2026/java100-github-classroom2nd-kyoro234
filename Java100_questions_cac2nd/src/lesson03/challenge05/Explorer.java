@@ -71,7 +71,9 @@ public class Explorer {
                         } else{
                                 System.out.println("ロープの長さを間違ってるよ\n");
                         }
-
+                        while (fullHeight>totalLength) {
+							
+						}
                 ///ここにwhile文を記述する。
 
                 System.out.println("登り切ったよ！");
