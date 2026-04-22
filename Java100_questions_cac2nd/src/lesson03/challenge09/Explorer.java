@@ -64,7 +64,13 @@ public class Explorer {
             geyser = (int) (Math.random() * 10 % 2);
 
 
-            //ここにif文、continue文を利用した処理を記述
+            if ( geyser==0) {
+            	System.out.println("隊長：");
+            	System.out.println((i + 1) + "個目。熱湯");
+            	System.out.println("ラッキー！");
+            	continue;
+            	
+			} 
 
 
             damage++;
