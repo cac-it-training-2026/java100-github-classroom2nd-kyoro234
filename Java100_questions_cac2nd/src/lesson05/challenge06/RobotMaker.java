@@ -44,6 +44,28 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Robot{
+	int energy;
+	String name;
+	int water;
+	void pumpWater() {
+		
+		System.out.println("水を"+water +"リットル出します\n");
+	}
+	
+	void setWater(int water) {
+		this.water = water;
+	}
+	void makeOmelet (int eggNum,int butterNum) {
+		int eOmelet1 = 2/eggNum;
+		int eOmelet2 = 5/butterNum;
+		if ( eOmelet1> eOmelet2) {
+			System.out.println( eOmelet1+ "人分のオムレツを作成しました。");
+			
+		} else {
+			System.out.println( eOmelet2 + "人分のオムレツを作成しました。");
+		}
+}
 //ここに問題5で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：makeOmelet(引数int eggNum ,int butterNum、戻り値void、
 //入力されて材料の個数に併せてオムレツの個数を表示する)
@@ -73,6 +95,9 @@ public class RobotMaker {
         String butterNumStr = br.readLine();
         int butterNum = Integer.parseInt(butterNumStr);
 
+        Robot robot = new Robot();
+        robot.makeOmelet(eggNum, butterNum);
+        
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //makeOmeletを実行する。
@@ -83,4 +108,5 @@ public class RobotMaker {
         System.out.println("じゃろ。死んだ婆さんの秘伝のレシピを入れておいたからの。\n");
     }
 
+}
 }

@@ -49,6 +49,13 @@
 
 package lesson05.challenge03;
 
+class Robot{
+	int energy;
+	String name;
+	void pumpWater() {
+		System.out.println("水を1リットル出しました");
+	}
+}
 //ここに問題2で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：pumpWater(引数なし、戻り値void、「水を1リットルだしました」と出力するメソッド)
 
@@ -75,6 +82,12 @@ public class RobotMaker {
         System.out.println("G博士：");
         System.out.println("試しに3回実行してみよう。\n");
 
+        
+        Robot robot = new Robot();
+        robot.pumpWater();
+        robot.pumpWater();
+        robot.pumpWater();
+        
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //pumpWaterを3回実行する。

@@ -40,6 +40,10 @@
 
 package lesson05.challenge01;
 
+	class Robot{
+		int energy;
+		
+	}
 //ここに次の条件を満たすクラスを作成してください。
 //クラス名：Robot フィールド名：energy(int型)
 
@@ -61,7 +65,9 @@ public class RobotMaker {
         System.out.println("そういうのもロボットって言うんですね。\n");
         System.out.println("G博士：");
         System.out.println("早速ロボットを作ってエネルギーを10メモリ分入れてくれ。\n");
-
+        
+        Robot robot1 = new Robot();
+        robot1.energy = 10;
         //ここにRobotoクラスを利用したオブジェクトを作成してください。
         //またフィールドenergyに10を代入してください。
 
