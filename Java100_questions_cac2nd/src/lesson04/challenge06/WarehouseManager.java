@@ -38,9 +38,29 @@ public class WarehouseManager {
 	public static void main(String[] args) {
 
 		int[] ABKosanArray = new int[5];
+		int num = 0;
+		boolean loopFlag = false;
+		
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			do {
+				loopFlag = false;
+				num =(int)(Math.random()*10)%5+1;
+				
+				for (int j = 0; j < ABKosanArray.length; j++) {
+					if ( ABKosanArray[j] == num) {
+						loopFlag = true;
+						break;
+						
+					}
+					
+				}
+			} while (loopFlag);
+			
+			
+			ABKosanArray[i] = num;
+			
+		}
 
-
-		//ここに重複チェックおよび値の代入処理を記述する
 
 
 		System.out.println("E主任：");
@@ -56,10 +76,24 @@ public class WarehouseManager {
 			}
 		}
 		System.out.println("\nです。\n");
+		int[] changeIndexArray = new int [4];
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			if (ABKosanArray[i] == 1) {
+				changeIndexArray[0] = i;
+			} else if (ABKosanArray[i] == 2) {
+				changeIndexArray[1] = i;
+			} else if (ABKosanArray[i] == 3) {
+				changeIndexArray[2] = i;
+			} else if (ABKosanArray[i] == 4) {
+				changeIndexArray[3] = i;
+			}
+		}
 
-
-		//ここに値の入れ替え処理を記述する
-
+		ABKosanArray[changeIndexArray[0]] = 3; // 1があった場所に3を入れる
+		ABKosanArray[changeIndexArray[2]] = 1; // 3があった場所に1を入れる
+		
+		ABKosanArray[changeIndexArray[1]] = 4; // 2があった場所に4を入れる
+		ABKosanArray[changeIndexArray[3]] = 2; // 4があった場所に2を入れる
 
 		System.out.println("入れ替え後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {

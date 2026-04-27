@@ -99,7 +99,29 @@ public class WarehouseManager {
 
 		System.out.println("\n\nでした。直してきます...\n");
 
-
+		int zeroIndex = -1;
+		// 1. 0の位置（インデックス）を探す
+		for (int i = 0; i < wonderfulArray.length; i++) {
+			if (wonderfulArray[i] == 0) {
+				zeroIndex = i;
+				break;
+			}
+		}
+		int missingNum = 0;
+		for (int num = 1; num <= 5; num++) {
+			boolean isExist = false;
+			for (int i = 0; i < wonderfulArray.length; i++) {
+				if (wonderfulArray[i] == num) {
+					isExist = true;
+					break;
+				}
+			}
+			if (!isExist) {
+				missingNum = num;
+				break;
+			}
+		}
+		wonderfulArray[zeroIndex] = missingNum;
 		//ここに適切な値の挿入処理を記述する
 
 

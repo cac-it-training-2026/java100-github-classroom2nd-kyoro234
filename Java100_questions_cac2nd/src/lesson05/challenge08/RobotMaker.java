@@ -59,6 +59,52 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Robot{
+	int energy;
+	String name;
+	int water;
+	void pumpWater() {
+		
+		System.out.println("水を"+water +"リットル出します\n");
+	}
+	 void randomWater() {
+	        water = (int) (Math.random() * 10) % 9 + 1;
+	    }
+	void setWater(int water) {
+		this.water = water;
+}
+	void makeOmelet (int eggNum,int butterNum) {
+		int eOmelet1 = 2/eggNum;
+		int eOmelet2 = 5/butterNum;
+		if ( eOmelet1> eOmelet2) {
+			System.out.println( eOmelet1+ "人分のオムレツを作成しました。");
+			
+		} else {
+			System.out.println( eOmelet2 + "人分のオムレツを作成しました。");
+		}
+	}
+		int getWater() {
+			return water;
+		}
+	String makeEggDishes (int flourNum,int sugarNum,int eggNum,int butterNum) {
+		int  flour = flourNum - 170;
+		int sugar =sugarNum - 50;
+		int egg = eggNum - 2;
+		int butter=  butterNum -80;
+	
+		 String menu = null;
+	        if ((flour >= 0) && (sugar >= 0) && (egg >= -1) && (butter >= 0)) {
+	            menu = "クッキー";
+	        } else if ((egg >= 0) && (butter >= -75)) {
+	            menu = "オムレツ";
+	        } else if(egg >= -1) {
+	            menu = "ゆで卵";
+	        } else {
+	            menu = null;
+	        }
+	        return menu;
+	}
+	}
 //ここに問題7で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：makeEggDishes(引数int flourNum, int sugarNum, int eggNum, int butterNum、
 //戻り値String、作成できるメニューを戻り値として返す。また、作成できるメニューが無い場合はnull値を返す)
@@ -104,10 +150,16 @@ public class RobotMaker {
         String butterNumStr = br.readLine();
         int butterNum = Integer.parseInt(butterNumStr);
 
+        Robot robot = new Robot();
+        String menu = robot
+        		.makeEggDishes( flourNum,  sugarNum,  eggNum,  butterNum);
+        if (menu!= null) {
+        	System.out.println("\n"+menu +"が出来ました。");
+        }else {
+        	System.out.println("何も作れません。");
+        }
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //makeEggDishesを実行する。
         //標準出力でメニューを表示する。
-    }
-
-}
+    }}

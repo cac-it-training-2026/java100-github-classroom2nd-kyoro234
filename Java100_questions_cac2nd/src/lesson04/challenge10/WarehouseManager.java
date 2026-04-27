@@ -62,10 +62,29 @@ public class WarehouseManager {
 	public static void main(String[] args) {
 
 
-		//ここに必要な配列の宣言を記述する。
+		int []C = new int [5];
+		int []D = new int [5];
+		int []E = new int [5];
 
+		int[][] allArrays = {C, D, E};
+		
+		for (int i = 0; i < allArrays.length; i++) {
+			for (int j = 0; j < allArrays[i].length; j++) {
+				double rand = Math.random();
+				
+				if (rand < 0.25) {
+					 allArrays[i][j]= 0;
+					
+				} else {
+					 allArrays[i][j]= (int)(Math.random()*10)+1;
+					 
 
-		//ここに配列に値を代入する処理を記述する。(要素はランダム)
+				}
+				
+			}
+			
+		}
+	    
 
 
 		System.out.println("E主任：");
@@ -77,19 +96,24 @@ public class WarehouseManager {
 		System.out.print("C...");
 
 
-		//ここに配列Cの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < C.length; i++) {
+			System.out.print(C[i] + (i == C.length - 1 ? "" : ","));
+			
+		}
 
 
 		System.out.print("\n\nD...");
 
 
-		//ここに配列Dの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < D.length; i++) {
+			System.out.print(D[i] + (i == D.length - 1 ? "" : ","));
 
 
 		System.out.print("\n\nE...");
 
-
-		//ここに配列Eの要素をすべて出力する処理を記述する。
+		}
+		for (int i = 0; i < E.length; i++) {
+			System.out.print(E[i] + (i == E.length - 1 ? "" : ","));
 
 
 		System.out.println("\n\nです。\n");
@@ -97,4 +121,5 @@ public class WarehouseManager {
 		System.out.println("E主任：");
 		System.out.println("ご苦労さまでした。");
 	}
+}
 }

@@ -42,8 +42,13 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
-		//ここに配列の宣言および値の代入処理を記述する（for文）
+		int[] fukuro = new int[5];
+		
+		
+		for (int i = 0; i < 5; i++) {
+			fukuro [i]= (int)(Math.random()*10)%5+1;
+			
+		}
 
 
 		System.out.println("E主任：");
@@ -54,8 +59,16 @@ public class WarehouseManager {
 
 		boolean hitFlag = false;
 
-
-		//ここに要素の確認および何袋目かの出力処理を記述する
+		for (int i = 0; i < fukuro.length; i++) {
+			if (fukuro [i]==5) {
+				hitFlag = true;
+				System.out.println((i+1)+"袋目 ");
+				
+				
+			}
+			
+		}
+		
 
 
 		if (hitFlag) {

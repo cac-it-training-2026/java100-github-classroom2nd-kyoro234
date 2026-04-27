@@ -36,6 +36,20 @@
 
 package lesson05.challenge04;
 
+class Robot{
+	int energy;
+	String name;
+	int water;
+	void pumpWater() {
+		randomWater();
+		System.out.println("水を"+water +"リットル出します\n");
+	}
+	
+	void randomWater() {
+		water = (int)(Math.random()*10)%9+1;
+	}
+}
+
 //ここに問題3で作成したクラスに次の条件を足したクラスを作成してください。
 //フィールド名：water(int型)
 //メソッド名：randomWater(引数なし、戻り値void、waterに1～9の乱数を入れるメソッド)
@@ -59,6 +73,10 @@ public class RobotMaker {
         System.out.println("G博士：");
         System.out.println("本当か！どれどれ\n");
 
+        Robot robot = new Robot();
+        
+        robot.pumpWater();
+        robot.randomWater();
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //pumpWaterを実行する。
